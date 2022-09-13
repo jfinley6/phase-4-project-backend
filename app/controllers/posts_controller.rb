@@ -6,8 +6,18 @@ class PostsController < ApplicationController
     end
 
     def create
-        post = Post.create(post_params)
+        post = Post.create!(
+            subject: params['post']['subject'],
+            body: params['post']['body'],
+            image_url: params['post']['image_url'],
+            user_id: params['post']['user_id']
+        )
         render json: post, status: :created
+    end
+
+    def show
+        post = Post.find(params[:id])
+        render json: post, include: :comments
     end
 
     private
