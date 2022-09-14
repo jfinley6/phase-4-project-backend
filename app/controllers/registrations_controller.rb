@@ -19,4 +19,11 @@ class RegistrationsController < ApplicationController
         end
     end
 
+    def update
+        user = User.find_by_id(params[:id])
+        user.update!(
+            username: params['user']['username']
+        )
+    end
+
 end
