@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
 
     def index
-        posts = Post.all
-        render json: posts
+        posts = Post.all.order("created_at desc")
+        render json: posts, include: { user: { only: :username } }
     end
 
     def create
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
     def show
         post = Post.find(params[:id])
-        render json: post, include: :comments
+        render json: post, include: { user: { only: :username } }, include: { comments: {include: {user: {only: :username}}}}
     end
 
     private

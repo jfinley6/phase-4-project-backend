@@ -7,5 +7,5 @@ Post.create(:subject => 'React', :body => "I love it!", :image_url => "https://m
 Post.create(:subject => 'React', :body => "I love it!", :image_url => "https://media.istockphoto.com/photos/maroon-bells-autumn-aspen-treeslake-reflectionsaspen-colorado-picture-id478656454?k=20&m=478656454&s=612x612&w=0&h=82vTv92P5yN0ROHFDvp3ppL2S4GsDzhrVc5ik6dbe90=", :user_id => 1)
 
 Comment.create(:body => 'Awesome', :user_id => 1, :post_id => 1)
-Comment.create(:body => 'Thrilling', :user_id => 2, :post_id => 1)
+Comment.create(:body => 'Thrilling', :user_id => 1, :post_id => 1)
 puts "Success"
