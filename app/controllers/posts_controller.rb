@@ -17,13 +17,7 @@ class PostsController < ApplicationController
 
     def show
         post = Post.find(params[:id])
-        render json: post, include: { user: { only: :username } }, include: { comments: {include: {user: {only: :username}}}}
-    end
-
-    private
-
-    def post_params
-        params.permit(:subject, :body, :image_url, :user_id)
+        render json: post, include: {:comments => {:include => :user}, :user => {only: [:username, :user_id]}}
     end
 
 end
