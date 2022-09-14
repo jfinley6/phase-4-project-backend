@@ -20,5 +20,10 @@ class PostsController < ApplicationController
         render json: post, include: {:comments => {:include => :user}, :user => {only: [:username, :id]}}
     end
 
+    def destroy
+        post = Post.find(params[:id])
+        post.destroy
+    end
+
 
 end
