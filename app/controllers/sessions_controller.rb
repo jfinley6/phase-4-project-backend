@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
     def set_current_user
         if session[:user_id]
-            @current_user = User.find(session[:user_id])
+            current_user = User.find(session[:user_id])
         end
     end
 
@@ -24,10 +24,10 @@ class SessionsController < ApplicationController
     end
 
     def logged_in
-        if @current_user
+        if current_user
             render json: {
                 logged_in: true,
-                user: @current_user
+                user: current_user
             }
         else
             render json: {
