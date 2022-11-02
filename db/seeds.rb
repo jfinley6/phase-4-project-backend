@@ -9,4 +9,7 @@ Post.create(:subject => 'Multiple Programming Languages', :body => "<p>Learning 
 
 Comment.create(:body => 'You also do not need to use key and the like and can simply access the value by localStorage.key', :user_id => 2, :post_id => 1)
 Comment.create(:body => 'Great topic!', :user_id => 3, :post_id => 1)
+Comment.create(:body => 'Wow!', :user_id => 3, :post_id => 2)
+Comment.create(:body => "Super!", :user_id => 3, :post_id => 3)
+Comment.create(:body => 'Awesome!', :user_id => 3, :post_id => 1)
 puts "Success"
